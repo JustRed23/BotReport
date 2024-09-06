@@ -1,0 +1,43 @@
+# BotReport configuration
+
+detection:
+  # The maximum number of failed attempts in the specified time window
+  max-failed-attempts: 5
+  # The time-window in seconds to consider for failed attempts
+  time-window: 60
+
+action:
+  # Block the IP address from further requests
+  block:
+    enabled: true
+    # The time in seconds to block the IP address
+    time: 3600
+
+  # Report the IP address to a third-party service
+  report:
+    enabled: false
+    url: ""
+    method: "POST"
+    headers:
+      - key: "Content-Type"
+        value: "application/json"
+    data: ""
+    # The time in seconds between reports
+    timeout: 1800
+
+notification:
+  # Log detections in the console
+  log-detections: true
+  # Store detections in a database
+  store-detections: true
+  # Report detections to a third-party service
+  notify-api:
+    enabled: false
+    url: ""
+    method: "POST"
+    headers:
+      - key: "Content-Type"
+        value: "application/json"
+    data: "{\"message\": \"IP {{IP}} has been detected as a bot\"}"
+    # The time in seconds between notifications
+    timeout: 60
