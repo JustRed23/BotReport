@@ -56,6 +56,7 @@ public class PluginMain {
             return;
         }
 
+        server.getEventManager().register(this, new LoginListener());
         logger.info("{} has been loaded successfully!", BuildConstants.NAME);
     }
 
