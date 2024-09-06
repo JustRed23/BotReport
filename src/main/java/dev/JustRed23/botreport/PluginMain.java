@@ -7,6 +7,8 @@ import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.plugin.annotation.DataDirectory;
 import org.slf4j.Logger;
 
+import java.nio.file.Path;
+
 @Plugin(
         id = BuildConstants.ID,
         name = BuildConstants.NAME,
